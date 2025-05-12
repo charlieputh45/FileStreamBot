@@ -4,3 +4,4 @@ quart
 uvicorn
 aiohttp
 requests
+python-dotenv
