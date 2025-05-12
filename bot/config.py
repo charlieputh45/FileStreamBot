@@ -1,17 +1,23 @@
 from os import environ as env
+from dotenv import load_dotenv
+
+load_dotenv('.env', override=True)
 
 class Telegram:
-    API_ID = int(env.get("TELEGRAM_API_ID", 12345))
-    API_HASH = env.get("TELEGRAM_API_HASH", "xyz")
-    OWNER_ID = int(env.get("OWNER_ID", 5530237028))
-    ALLOWED_USER_IDS = env.get("ALLOWED_USER_IDS", "").split()
-    BOT_USERNAME = env.get("TELEGRAM_BOT_USERNAME", "BotFather")
-    BOT_TOKEN = env.get("TELEGRAM_BOT_TOKEN", "1234567:xyz")
-    CHANNEL_ID = int(env.get("TELEGRAM_CHANNEL_ID", -100123456789))
+    API_ID = int(env.get("TELEGRAM_API_ID"))
+    API_HASH = env.get("TELEGRAM_API_HASH")
+    OWNER_ID = int(env.get("OWNER_ID"))
+    ALLOWED_USER_IDS = env.get("ALLOWED_USER_IDS").split()
+    BOT_USERNAME = env.get("TELEGRAM_BOT_USERNAME")
+    BOT_TOKEN = env.get("TELEGRAM_BOT_TOKEN")
+    CHANNEL_ID = int(env.get("TELEGRAM_CHANNEL_ID"))
     SECRET_CODE_LENGTH = int(env.get("SECRET_CODE_LENGTH", 24))
-
+    TOKEN_TIMEOUT = int(env.get("TOKEN_TIMEOUT", 28800))
+    USER_LIMIT = int(env.get("USER_LIMIT", 10))
+    SHORTERNER_URL = str (env.get("SHORTERNER_URL"))
+    URLSHORTX_API_TOKEN = str (env.get("URLSHORTX_API_TOKEN"))
 class Server:
-    BASE_URL = env.get("BASE_URL", "http://127.0.0.1:8080")
+    BASE_URL = env.get("BASE_URL")
     BIND_ADDRESS = env.get("BIND_ADDRESS", "0.0.0.0")
     PORT = int(env.get("PORT", 8080))
 

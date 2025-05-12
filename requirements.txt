@@ -2,3 +2,5 @@ hydrogram
 tgcrypto
 quart
 uvicorn
+aiohttp
+requests
