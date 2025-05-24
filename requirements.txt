@@ -5,3 +5,5 @@ uvicorn
 aiohttp
 requests
 python-dotenv
+gunicorn
+flask
